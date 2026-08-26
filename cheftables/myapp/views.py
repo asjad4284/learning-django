@@ -11,3 +11,6 @@ def menu_items(request,dish):
     }
     description=items[dish]
     return HttpResponse(f"<h2>{dish}</h2>" + description)
+
+def item_number(request, item_number):
+    return HttpResponse(f"This is item_number: {item_number}")

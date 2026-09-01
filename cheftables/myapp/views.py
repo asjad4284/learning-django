@@ -1,8 +1,14 @@
 from django.http import HttpResponse
+from django.shortcuts import render
+from .forms import DemoForm
 
 
 def home(request):
-    return HttpResponse("Welcome to lemon squeezy")
+    # 1. Create an instance of the form
+    my_form = DemoForm()
+    
+    # 2. Pass the form to the HTML template using a dictionary
+    return render(request, "home.html", {"form": my_form})
 
 def menu_items(request,dish):
     items={
